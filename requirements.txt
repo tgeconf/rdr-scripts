@@ -1,0 +1,17 @@
+# RDR Scripts Dependencies
+
+# Core dependencies
+requests>=2.25.1
+beautifulsoup4>=4.9.3
+
+# For arXiv module
+urllib3>=1.26.0
+
+# For date handling (already in standard library)
+# datetime
+# typing
+# logging
+# xml.etree.ElementTree
+
+# Optional: for enhanced HTTP handling
+# requests[security]  # For SSL/TLS support
