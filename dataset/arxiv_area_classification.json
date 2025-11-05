@@ -1,0 +1,129 @@
+[
+  {
+    "paper_id": "2510.27343",
+    "category": "others",
+    "categories": [
+      "others"
+    ],
+    "confidence": 1.0,
+    "rationale": "The paper focuses on process discovery and discriminative rule learning for business process outcomes using event logs, which does not align with the predefined categories such as foundation models, agent systems, or financial applications."
+  },
+  {
+    "paper_id": "2510.27383",
+    "category": "Multi-Agent Systems & Collective Intelligence",
+    "categories": [
+      "Multi-Agent Systems & Collective Intelligence"
+    ],
+    "confidence": 0.9,
+    "rationale": "The paper employs a multi-agent reinforcement learning framework to model coordination and interactions between pedestrians and drivers, focusing on behavioral realism and individual differences, which directly aligns with the definition of Multi-Agent Systems & Collective Intelligence."
+  },
+  {
+    "paper_id": "2510.27363",
+    "category": "Agent Architecture & Tool-Use Orchestration",
+    "categories": [
+      "Agent Architecture & Tool-Use Orchestration"
+    ],
+    "confidence": 0.9,
+    "rationale": "The paper introduces an agentic framework with global planning, iterative execution loops, and tool integration for multimodal tasks, aligning with key indicators like planning/execution loops and tool schemas."
+  },
+  {
+    "paper_id": "2510.27210",
+    "category": "Agent Architecture & Tool-Use Orchestration",
+    "categories": [
+      "Agent Architecture & Tool-Use Orchestration",
+      "Agent Memory & Knowledge Systems"
+    ],
+    "confidence": 0.8,
+    "rationale": "The framework integrates structured reasoning (e.g., Chain-of-Thought analyses) for action prediction and planning, aligning with agent architecture, and employs history summarization to manage and retrieve past experiences, fitting memory systems."
+  },
+  {
+    "paper_id": "2510.27329",
+    "category": "Agent Memory & Knowledge Systems",
+    "categories": [
+      "Agent Memory & Knowledge Systems"
+    ],
+    "confidence": 0.9,
+    "rationale": "The paper introduces reward machines with agendas and coupled states to track unordered subtasks over long horizons, directly aligning with memory architectures for knowledge representation and retrieval in agents."
+  },
+  {
+    "paper_id": "2510.27628",
+    "category": "Agent Architecture & Tool-Use Orchestration",
+    "categories": [
+      "Agent Architecture & Tool-Use Orchestration"
+    ],
+    "confidence": 0.7,
+    "rationale": "The paper defines Agentic AI as autonomous software delivery mechanisms in complex enterprise settings and emphasizes validation, which aligns with the design and runtime control aspects of agent architectures, including reliability and observability."
+  },
+  {
+    "paper_id": "2510.27410",
+    "category": "Agent Architecture & Tool-Use Orchestration",
+    "categories": [
+      "Agent Architecture & Tool-Use Orchestration"
+    ],
+    "confidence": 0.85,
+    "rationale": "The paper designs an agent that actively probes for information through dialogue to resolve user intent, using a training framework with information gain as an intrinsic reward, which aligns with planning and execution loops in agent orchestration."
+  },
+  {
+    "paper_id": "2510.27448",
+    "category": "Foundation Models",
+    "categories": [
+      "Foundation Models"
+    ],
+    "confidence": 0.9,
+    "rationale": "The paper focuses on enhancing Multi-modal Large Language Models (MLLMs), a type of foundation model, by generating synthetic data to improve geometric reasoning, as evidenced by performance gains on benchmarks like MathVista and GeoQA."
+  },
+  {
+    "paper_id": "2510.27630",
+    "category": "Agent Architecture & Tool-Use Orchestration",
+    "categories": [
+      "Agent Architecture & Tool-Use Orchestration"
+    ],
+    "confidence": 0.8,
+    "rationale": "The paper introduces Apollo, a framework for asynchronous human guidance and action-level data filtering to monitor and correct agent trajectories, which directly aligns with execution monitoring, error recovery, and reliability in agent runtime systems."
+  },
+  {
+    "paper_id": "2510.27353",
+    "category": "others",
+    "categories": [
+      "others"
+    ],
+    "confidence": 0.9,
+    "rationale": "The paper focuses on validating LLM-generated heuristics for bin packing and proposing alternative algorithms, which is an application and critical assessment rather than research on foundation models, agent systems, or financial methodologies defined in the categories."
+  },
+  {
+    "paper_id": "2510.27194",
+    "category": "others",
+    "categories": [
+      "others"
+    ],
+    "confidence": 0.95,
+    "rationale": "The paper focuses on systems engineering, lifecycle management, and governance for complex systems of systems, with no mention of AI models, agents, or financial applications covered in the defined categories."
+  },
+  {
+    "paper_id": "2510.27671",
+    "category": "others",
+    "categories": [
+      "others"
+    ],
+    "confidence": 0.9,
+    "rationale": "The paper focuses on applying existing foundation models and alignment techniques like DPO to structure-based drug design, with core contributions in domain-specific application rather than advancing foundation model research or other defined categories."
+  },
+  {
+    "paper_id": "2510.27544",
+    "category": "others",
+    "categories": [
+      "others"
+    ],
+    "confidence": 0.9,
+    "rationale": "The paper introduces TempoBench, a benchmark for deconstructing reasoning performance in LLMs through temporal trace and causal evaluations, which is a methodological contribution focused on evaluation rather than direct research in foundation models, agent systems, or financial applications."
+  },
+  {
+    "paper_id": "2510.27419",
+    "category": "Foundation Models",
+    "categories": [
+      "Foundation Models"
+    ],
+    "confidence": 0.9,
+    "rationale": "The paper focuses on optimizing reasoning chains in large reasoning models using reinforcement learning fine-tuning, which aligns with foundation model research on alignment and efficiency for general-purpose use."
+  }
+]

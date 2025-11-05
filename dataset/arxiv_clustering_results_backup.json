@@ -1,0 +1,89 @@
+{
+  "cluster_mapping": {
+    "2510.27210": {
+      "cluster_id": -1,
+      "coordinates": [
+        -4.706034183502197,
+        0.3609926700592041,
+        2.3481879234313965
+      ]
+    },
+    "2510.27329": {
+      "cluster_id": 1,
+      "coordinates": [
+        -3.8335726261138916,
+        0.09135506302118301,
+        2.005685329437256
+      ]
+    },
+    "2510.27363": {
+      "cluster_id": 1,
+      "coordinates": [
+        -3.902574062347412,
+        0.8321760892868042,
+        1.406548261642456
+      ]
+    },
+    "2510.27383": {
+      "cluster_id": 2,
+      "coordinates": [
+        -3.6487085819244385,
+        0.4954606294631958,
+        2.866438865661621
+      ]
+    },
+    "2510.27410": {
+      "cluster_id": 2,
+      "coordinates": [
+        -3.599719285964966,
+        1.205722451210022,
+        2.2961111068725586
+      ]
+    },
+    "2510.27419": {
+      "cluster_id": 1,
+      "coordinates": [
+        -4.792254447937012,
+        0.8633103966712952,
+        1.5102612972259521
+      ]
+    },
+    "2510.27448": {
+      "cluster_id": 0,
+      "coordinates": [
+        -4.908059597015381,
+        1.445855736732483,
+        2.3214948177337646
+      ]
+    },
+    "2510.27628": {
+      "cluster_id": 0,
+      "coordinates": [
+        -4.465427875518799,
+        1.0896855592727661,
+        3.04546856880188
+      ]
+    },
+    "2510.27630": {
+      "cluster_id": 2,
+      "coordinates": [
+        -4.126798152923584,
+        1.8256858587265015,
+        1.8492381572723389
+      ]
+    }
+  },
+  "cluster_keywords": {
+    "0": "LLMs, Reasoning, Reliability",
+    "1": "Reinforcement Learning, Efficiency, Reward Design",
+    "2": "Human-AI Interaction, Intent Modeling, Human Constraints"
+  },
+  "statistics": {
+    "total_papers": 9,
+    "total_clusters": 3,
+    "noise_papers": 1,
+    "clustering_algorithm": "HDBSCAN",
+    "dimensionality_reduction": "UMAP"
+  },
+  "papers_processed": 9
+}

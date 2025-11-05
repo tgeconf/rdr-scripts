@@ -1,0 +1,448 @@
+[
+  {
+    "paper_id": "2510.27210",
+    "area": "Agent Architecture & Tool-Use Orchestration",
+    "categories": [
+      "Agent Architecture & Tool-Use Orchestration",
+      "Agent Memory & Knowledge Systems"
+    ],
+    "title": "GUI-Rise: Structured Reasoning and History Summarization for GUI Navigation",
+    "analysis": {
+      "Task & Environment Specification (T)": "The paper addresses GUI navigation as the environment but does not specify interfaces, tool schemas, or constraints; goal formalization is implied through structured reasoning.",
+      "Agent Evaluation (E)": "Comprehensive evaluations on standard benchmarks demonstrate state-of-the-art task success and robust out-of-domain generalization, validating agent performance through end-to-end metrics.",
+      "Planning & Control Loops (P)": "The framework integrates structured reasoning with Chain-of-Thought analyses for progress estimation and decision reasoning, enabling hierarchical planning and reflection to inform action predictions and history summaries.",
+      "Security & Compliance (F)": "Security and compliance aspects such as permissioning, data boundaries, or audit trails are not discussed in the context of GUI navigation.",
+      "Latency/Cost/Quality Trade-offs (C)": "Trade-offs related to latency, cost, or quality are not addressed; evaluations emphasize performance without model routing, caching, or adaptive reasoning depth.",
+      "Tool Invocation & Program Synthesis (U)": "Tool invocation is limited to action prediction in GUI navigation without explicit discussion of tool selection, argument grounding, or program synthesis for orchestration.",
+      "Execution Monitoring & Error Recovery (X)": "No mechanisms for runtime monitoring, exception handling, or error recovery are mentioned; the focus is on reasoning and summarization rather than execution safeguards."
+    },
+    "reflection": {
+      "verdict": "accept",
+      "feedback": "Analysis is relevant, faithful to the paper, and aligned with the taxonomy, accurately capturing addressed and unaddressed perspectives.",
+      "raw_response": "{\"verdict\": \"accept\", \"feedback\": \"Analysis is relevant, faithful to the paper, and aligned with the taxonomy, accurately capturing addressed and unaddressed perspectives.\"}"
+    },
+    "attempts": [
+      {
+        "attempt_number": 1,
+        "analysis": {
+          "Task & Environment Specification (T)": "The paper addresses GUI navigation as the environment but does not specify interfaces, tool schemas, or constraints; goal formalization is implied through structured reasoning.",
+          "Agent Evaluation (E)": "Comprehensive evaluations on standard benchmarks demonstrate state-of-the-art task success and robust out-of-domain generalization, validating agent performance through end-to-end metrics.",
+          "Planning & Control Loops (P)": "The framework integrates structured reasoning with Chain-of-Thought analyses for progress estimation and decision reasoning, enabling hierarchical planning and reflection to inform action predictions and history summaries.",
+          "Security & Compliance (F)": "Security and compliance aspects such as permissioning, data boundaries, or audit trails are not discussed in the context of GUI navigation.",
+          "Latency/Cost/Quality Trade-offs (C)": "Trade-offs related to latency, cost, or quality are not addressed; evaluations emphasize performance without model routing, caching, or adaptive reasoning depth.",
+          "Tool Invocation & Program Synthesis (U)": "Tool invocation is limited to action prediction in GUI navigation without explicit discussion of tool selection, argument grounding, or program synthesis for orchestration.",
+          "Execution Monitoring & Error Recovery (X)": "No mechanisms for runtime monitoring, exception handling, or error recovery are mentioned; the focus is on reasoning and summarization rather than execution safeguards."
+        },
+        "analysis_raw": "{\n  \"Task & Environment Specification (T)\": \"The paper addresses GUI navigation as the environment but does not specify interfaces, tool schemas, or constraints; goal formalization is implied through structured reasoning.\",\n  \"Planning & Control Loops (P)\": \"The framework integrates structured reasoning with Chain-of-Thought analyses for progress estimation and decision reasoning, enabling hierarchical planning and reflection to inform action predictions and history summaries.\",\n  \"Tool Invocation & Program Synthesis (U)\": \"Tool invocation is limited to action prediction in GUI navigation without explicit discussion of tool selection, argument grounding, or program synthesis for orchestration.\",\n  \"Execution Monitoring & Error Recovery (X)\": \"No mechanisms for runtime monitoring, exception handling, or error recovery are mentioned; the focus is on reasoning and summarization rather than execution safeguards.\",\n  \"Latency/Cost/Quality Trade-offs (C)\": \"Trade-offs related to latency, cost, or quality are not addressed; evaluations emphasize performance without model routing, caching, or adaptive reasoning depth.\",\n  \"Security & Compliance (F)\": \"Security and compliance aspects such as permissioning, data boundaries, or audit trails are not discussed in the context of GUI navigation.\",\n  \"Agent Evaluation (E)\": \"Comprehensive evaluations on standard benchmarks demonstrate state-of-the-art task success and robust out-of-domain generalization, validating agent performance through end-to-end metrics.\"\n}",
+        "reflection": {
+          "verdict": "accept",
+          "feedback": "Analysis is relevant, faithful to the paper, and aligned with the taxonomy, accurately capturing addressed and unaddressed perspectives.",
+          "raw_response": "{\"verdict\": \"accept\", \"feedback\": \"Analysis is relevant, faithful to the paper, and aligned with the taxonomy, accurately capturing addressed and unaddressed perspectives.\"}"
+        },
+        "error_feedback": null
+      }
+    ]
+  },
+  {
+    "paper_id": "2510.27210",
+    "area": "Agent Memory & Knowledge Systems",
+    "categories": [
+      "Agent Architecture & Tool-Use Orchestration",
+      "Agent Memory & Knowledge Systems"
+    ],
+    "title": "GUI-Rise: Structured Reasoning and History Summarization for GUI Navigation",
+    "analysis": {
+      "Indexing & Retrieval (R)": "Not explicitly addressed; the framework uses history for action prediction but does not detail retrieval mechanisms like indices or query planning.",
+      "Evolution & Update Policies (E)": "No mention of memory update policies such as forgetting, conflict resolution, or versioning in the abstract or metadata.",
+      "Writing & Consolidation (W)": "Explicitly includes history summarization to create compact summaries for future steps, enabling cross-episode consolidation and distillation of memory.",
+      "Memory Typology (M)": "The paper involves episodic memory through history utilization and semantic/procedural elements via structured reasoning Chain-of-Thought analyses for progress estimation and decision reasoning.",
+      "Privacy & Governance (G)": "Not addressed in the abstract or metadata; no mention of access control, isolation, or data governance.",
+      "Credit Assignment & Attribution (C)": "The history-aware reward directly links summary quality to subsequent action performance, facilitating credit assignment for memory traces in reinforcement learning.",
+      "Memory Evaluation (V)": "Evaluations focus on overall agent performance and out-of-domain generalization, but not specifically on memory metrics like staleness or coverage; success is measured via benchmark results."
+    },
+    "reflection": {
+      "verdict": "accept",
+      "feedback": "",
+      "raw_response": ""
+    },
+    "attempts": [
+      {
+        "attempt_number": 1,
+        "analysis": {
+          "Indexing & Retrieval (R)": "Not explicitly addressed; the framework uses history for action prediction but does not detail retrieval mechanisms like indices or query planning.",
+          "Evolution & Update Policies (E)": "No mention of memory update policies such as forgetting, conflict resolution, or versioning in the abstract or metadata.",
+          "Writing & Consolidation (W)": "Explicitly includes history summarization to create compact summaries for future steps, enabling cross-episode consolidation and distillation of memory.",
+          "Memory Typology (M)": "The paper involves episodic memory through history utilization and semantic/procedural elements via structured reasoning Chain-of-Thought analyses for progress estimation and decision reasoning.",
+          "Privacy & Governance (G)": "Not addressed in the abstract or metadata; no mention of access control, isolation, or data governance.",
+          "Credit Assignment & Attribution (C)": "The history-aware reward directly links summary quality to subsequent action performance, facilitating credit assignment for memory traces in reinforcement learning.",
+          "Memory Evaluation (V)": "Evaluations focus on overall agent performance and out-of-domain generalization, but not specifically on memory metrics like staleness or coverage; success is measured via benchmark results."
+        },
+        "analysis_raw": "{\n  \"Memory Typology (M)\": \"The paper involves episodic memory through history utilization and semantic/procedural elements via structured reasoning Chain-of-Thought analyses for progress estimation and decision reasoning.\",\n  \"Indexing & Retrieval (R)\": \"Not explicitly addressed; the framework uses history for action prediction but does not detail retrieval mechanisms like indices or query planning.\",\n  \"Writing & Consolidation (W)\": \"Explicitly includes history summarization to create compact summaries for future steps, enabling cross-episode consolidation and distillation of memory.\",\n  \"Evolution & Update Policies (E)\": \"No mention of memory update policies such as forgetting, conflict resolution, or versioning in the abstract or metadata.\",\n  \"Credit Assignment & Attribution (C)\": \"The history-aware reward directly links summary quality to subsequent action performance, facilitating credit assignment for memory traces in reinforcement learning.\",\n  \"Privacy & Governance (G)\": \"Not addressed in the abstract or metadata; no mention of access control, isolation, or data governance.\",\n  \"Memory Evaluation (V)\": \"Evaluations focus on overall agent performance and out-of-domain generalization, but not specifically on memory metrics like staleness or coverage; success is measured via benchmark results.\"\n}",
+        "reflection": {
+          "verdict": "accept",
+          "feedback": "",
+          "raw_response": ""
+        },
+        "error_feedback": null
+      }
+    ]
+  },
+  {
+    "paper_id": "2510.27329",
+    "area": "Agent Memory & Knowledge Systems",
+    "categories": [
+      "Agent Memory & Knowledge Systems"
+    ],
+    "title": "Reinforcement Learning for Long-Horizon Unordered Tasks: From Boolean to Coupled Reward Machines",
+    "analysis": {
+      "Indexing & Retrieval (R)": "No explicit mention of indexing or retrieval mechanisms in the abstract.",
+      "Evolution & Update Policies (E)": "Not addressed; no mention of memory evolution, forgetting, or update policies.",
+      "Writing & Consolidation (W)": "No discussion of memory writing or consolidation processes.",
+      "Memory Typology (M)": "Agenda RMs track remaining subtasks via an agenda, resembling working memory for task progress.",
+      "Privacy & Governance (G)": "No coverage of privacy, access control, or governance aspects.",
+      "Credit Assignment & Attribution (C)": "Reward machines structure rewards to improve credit assignment, enabling efficient learning from complex tasks.",
+      "Memory Evaluation (V)": "Experimental results demonstrate scalability and efficiency gains, indirectly evaluating memory system performance in long-horizon tasks."
+    },
+    "reflection": {
+      "verdict": "accept",
+      "feedback": "Analysis correctly identifies alignments (e.g., M for working memory, C for credit assignment) and omissions, faithful to abstract and taxonomy.",
+      "raw_response": "{\"verdict\": \"accept\", \"feedback\": \"Analysis correctly identifies alignments (e.g., M for working memory, C for credit assignment) and omissions, faithful to abstract and taxonomy.\"}"
+    },
+    "attempts": [
+      {
+        "attempt_number": 1,
+        "analysis": {
+          "Indexing & Retrieval (R)": "No explicit mention of indexing or retrieval mechanisms in the abstract.",
+          "Evolution & Update Policies (E)": "Not addressed; no mention of memory evolution, forgetting, or update policies.",
+          "Writing & Consolidation (W)": "No discussion of memory writing or consolidation processes.",
+          "Memory Typology (M)": "Agenda RMs track remaining subtasks via an agenda, resembling working memory for task progress.",
+          "Privacy & Governance (G)": "No coverage of privacy, access control, or governance aspects.",
+          "Credit Assignment & Attribution (C)": "Reward machines structure rewards to improve credit assignment, enabling efficient learning from complex tasks.",
+          "Memory Evaluation (V)": "Experimental results demonstrate scalability and efficiency gains, indirectly evaluating memory system performance in long-horizon tasks."
+        },
+        "analysis_raw": "{\n  \"Memory Typology (M)\": \"Agenda RMs track remaining subtasks via an agenda, resembling working memory for task progress.\",\n  \"Indexing & Retrieval (R)\": \"No explicit mention of indexing or retrieval mechanisms in the abstract.\",\n  \"Writing & Consolidation (W)\": \"No discussion of memory writing or consolidation processes.\",\n  \"Evolution & Update Policies (E)\": \"Not addressed; no mention of memory evolution, forgetting, or update policies.\",\n  \"Credit Assignment & Attribution (C)\": \"Reward machines structure rewards to improve credit assignment, enabling efficient learning from complex tasks.\",\n  \"Privacy & Governance (G)\": \"No coverage of privacy, access control, or governance aspects.\",\n  \"Memory Evaluation (V)\": \"Experimental results demonstrate scalability and efficiency gains, indirectly evaluating memory system performance in long-horizon tasks.\"\n}",
+        "reflection": {
+          "verdict": "accept",
+          "feedback": "Analysis correctly identifies alignments (e.g., M for working memory, C for credit assignment) and omissions, faithful to abstract and taxonomy.",
+          "raw_response": "{\"verdict\": \"accept\", \"feedback\": \"Analysis correctly identifies alignments (e.g., M for working memory, C for credit assignment) and omissions, faithful to abstract and taxonomy.\"}"
+        },
+        "error_feedback": null
+      }
+    ]
+  },
+  {
+    "paper_id": "2510.27363",
+    "area": "Agent Architecture & Tool-Use Orchestration",
+    "categories": [
+      "Agent Architecture & Tool-Use Orchestration"
+    ],
+    "title": "ToolScope: An Agentic Framework for Vision-Guided and Long-Horizon Tool Use",
+    "analysis": {
+      "Task & Environment Specification (T)": "Specifies vision-guided and long-horizon tool use tasks in VQA benchmarks, with interfaces to external tools like Search, Code, and Perceive for multimodal perception.",
+      "Agent Evaluation (E)": "Evaluated on four VQA benchmarks (VQA 2.0, ScienceQA, MAT-Search, MathVista) with performance improvements up to +6.69%, demonstrating task success and generalization.",
+      "Planning & Control Loops (P)": "Employs a Global Navigator for high-level strategic planning and an Agentic Executor for iterative local execution, enabling hierarchical control and reflection in reasoning.",
+      "Security & Compliance (F)": "Not explicitly addressed; no evidence of permissioning, data boundaries, or compliance measures.",
+      "Latency/Cost/Quality Trade-offs (C)": "Not explicitly addressed; no mention of model routing, caching, or trade-offs in latency, cost, or quality.",
+      "Tool Invocation & Program Synthesis (U)": "Integrates and orchestrates tools (Search, Code, Perceive) through the Agentic Executor for multimodal perception and tool composition in reasoning processes.",
+      "Execution Monitoring & Error Recovery (X)": "Not explicitly addressed in the abstract; no evidence of runtime monitoring, exception handling, or recovery mechanisms."
+    },
+    "reflection": {
+      "verdict": "accept",
+      "feedback": "All perspective explanations are relevant, faithful to the abstract, and aligned with the taxonomy definitions.",
+      "raw_response": "{\"verdict\": \"accept\", \"feedback\": \"All perspective explanations are relevant, faithful to the abstract, and aligned with the taxonomy definitions.\"}"
+    },
+    "attempts": [
+      {
+        "attempt_number": 1,
+        "analysis": null,
+        "analysis_raw": "{\n  \"perspective 1\": \"The paper specifies task environments for multimodal VQA tasks, with interfaces to external tools like Search, Code, and Perceive, addressing tool schemas and visual context constraints in long-horizon scenarios.\",\n  \"perspective 2\": \"It employs hierarchical planning through a Global Navigator for high-level strategy and an Agentic Executor for iterative local perception, enabling decomposition and control loops in reasoning.\",\n  \"perspective 3\": \"The framework orchestrates tool invocation by integrating multiple tools (Search, Code, Perceive) in an iterative manner, involving tool selection and composition for multimodal perception.\",\n  \"perspective 4\": \"Not explicitly addressed; no evidence of execution monitoring, error handling, or recovery mechanisms in the abstract or metadata.\",\n  \"perspective 5\": \"Not discussed; no mention of latency, cost, or quality trade-offs, such as model routing or adaptive reasoning depth.\",\n  \"perspective 6\": \"Not covered; no evidence of security, compliance, or data privacy considerations like permissioning or audit trails.\",\n  \"perspective 7\": \"Evaluated on four VQA benchmarks (VQA 2.0, ScienceQA, MAT-Search, MathVista) with performance improvements, focusing on task success and generalization across domains.\"\n}",
+        "reflection": null,
+        "error_feedback": "Missing perspectives: Agent Evaluation (E), Execution Monitoring & Error Recovery (X), Latency/Cost/Quality Trade-offs (C), Planning & Control Loops (P), Security & Compliance (F), Task & Environment Specification (T), Tool Invocation & Program Synthesis (U) Unexpected perspectives: perspective 1, perspective 2, perspective 3, perspective 4, perspective 5, perspective 6, perspective 7 Use exactly the provided perspective labels as JSON keys."
+      },
+      {
+        "attempt_number": 2,
+        "analysis": {
+          "Task & Environment Specification (T)": "Specifies vision-guided and long-horizon tool use tasks in VQA benchmarks, with interfaces to external tools like Search, Code, and Perceive for multimodal perception.",
+          "Agent Evaluation (E)": "Evaluated on four VQA benchmarks (VQA 2.0, ScienceQA, MAT-Search, MathVista) with performance improvements up to +6.69%, demonstrating task success and generalization.",
+          "Planning & Control Loops (P)": "Employs a Global Navigator for high-level strategic planning and an Agentic Executor for iterative local execution, enabling hierarchical control and reflection in reasoning.",
+          "Security & Compliance (F)": "Not explicitly addressed; no evidence of permissioning, data boundaries, or compliance measures.",
+          "Latency/Cost/Quality Trade-offs (C)": "Not explicitly addressed; no mention of model routing, caching, or trade-offs in latency, cost, or quality.",
+          "Tool Invocation & Program Synthesis (U)": "Integrates and orchestrates tools (Search, Code, Perceive) through the Agentic Executor for multimodal perception and tool composition in reasoning processes.",
+          "Execution Monitoring & Error Recovery (X)": "Not explicitly addressed in the abstract; no evidence of runtime monitoring, exception handling, or recovery mechanisms."
+        },
+        "analysis_raw": "{\n  \"Task & Environment Specification (T)\": \"Specifies vision-guided and long-horizon tool use tasks in VQA benchmarks, with interfaces to external tools like Search, Code, and Perceive for multimodal perception.\",\n  \"Planning & Control Loops (P)\": \"Employs a Global Navigator for high-level strategic planning and an Agentic Executor for iterative local execution, enabling hierarchical control and reflection in reasoning.\",\n  \"Tool Invocation & Program Synthesis (U)\": \"Integrates and orchestrates tools (Search, Code, Perceive) through the Agentic Executor for multimodal perception and tool composition in reasoning processes.\",\n  \"Execution Monitoring & Error Recovery (X)\": \"Not explicitly addressed in the abstract; no evidence of runtime monitoring, exception handling, or recovery mechanisms.\",\n  \"Latency/Cost/Quality Trade-offs (C)\": \"Not explicitly addressed; no mention of model routing, caching, or trade-offs in latency, cost, or quality.\",\n  \"Security & Compliance (F)\": \"Not explicitly addressed; no evidence of permissioning, data boundaries, or compliance measures.\",\n  \"Agent Evaluation (E)\": \"Evaluated on four VQA benchmarks (VQA 2.0, ScienceQA, MAT-Search, MathVista) with performance improvements up to +6.69%, demonstrating task success and generalization.\"\n}",
+        "reflection": {
+          "verdict": "accept",
+          "feedback": "All perspective explanations are relevant, faithful to the abstract, and aligned with the taxonomy definitions.",
+          "raw_response": "{\"verdict\": \"accept\", \"feedback\": \"All perspective explanations are relevant, faithful to the abstract, and aligned with the taxonomy definitions.\"}"
+        },
+        "error_feedback": null
+      }
+    ]
+  },
+  {
+    "paper_id": "2510.27383",
+    "area": "Multi-Agent Systems & Collective Intelligence",
+    "categories": [
+      "Multi-Agent Systems & Collective Intelligence"
+    ],
+    "title": "Realistic pedestrian-driver interaction modelling using multi-agent RL with human perceptual-motor constraints",
+    "analysis": {
+      "Collective Evaluation (E)": "Addressed through behavioral metrics assessing interaction realism, such as smooth movements and cautious behavior, which evaluate emergent properties and efficiency in the multi-agent system.",
+      "Interaction Protocols (P)": "Not addressed. The paper focuses on modelling interactions with perceptual-motor constraints rather than formal communication, negotiation, or coordination protocols.",
+      "Mechanism & Incentive Design (M)": "Not addressed. The study does not involve designing rules to elicit truthful signals or efficient outcomes under strategic behavior.",
+      "Simulation & Testbeds (T)": "Addressed by using a real-world dataset from an unsignalised pedestrian crossing to simulate interactions, incorporating visual and motor constraints for environment realism and partial observability.",
+      "Learning Dynamics (L)": "Addressed through a multi-agent RL framework that incorporates population-level distributions for human constraints, enabling adaptation to individual differences and non-stationarity in interactive scenarios.",
+      "Robustness & Safety (R)": "Not addressed. While safety is a motivation for autonomous vehicles, the paper does not cover adversarial agents, collusion, or resilience to failures.",
+      "Team Formation & Role Specialization (S)": "Not addressed. The roles of pedestrian and driver are fixed, and there is no discussion of dynamic team formation, role assignment, or task allocation."
+    },
+    "reflection": {
+      "verdict": "accept",
+      "feedback": "Analysis is relevant, faithful to the paper, and aligned with the taxonomy definitions.",
+      "raw_response": "{\"verdict\": \"accept\", \"feedback\": \"Analysis is relevant, faithful to the paper, and aligned with the taxonomy definitions.\"}"
+    },
+    "attempts": [
+      {
+        "attempt_number": 1,
+        "analysis": {
+          "Collective Evaluation (E)": "Addressed through behavioral metrics assessing interaction realism, such as smooth movements and cautious behavior, which evaluate emergent properties and efficiency in the multi-agent system.",
+          "Interaction Protocols (P)": "Not addressed. The paper focuses on modelling interactions with perceptual-motor constraints rather than formal communication, negotiation, or coordination protocols.",
+          "Mechanism & Incentive Design (M)": "Not addressed. The study does not involve designing rules to elicit truthful signals or efficient outcomes under strategic behavior.",
+          "Simulation & Testbeds (T)": "Addressed by using a real-world dataset from an unsignalised pedestrian crossing to simulate interactions, incorporating visual and motor constraints for environment realism and partial observability.",
+          "Learning Dynamics (L)": "Addressed through a multi-agent RL framework that incorporates population-level distributions for human constraints, enabling adaptation to individual differences and non-stationarity in interactive scenarios.",
+          "Robustness & Safety (R)": "Not addressed. While safety is a motivation for autonomous vehicles, the paper does not cover adversarial agents, collusion, or resilience to failures.",
+          "Team Formation & Role Specialization (S)": "Not addressed. The roles of pedestrian and driver are fixed, and there is no discussion of dynamic team formation, role assignment, or task allocation."
+        },
+        "analysis_raw": "{\n  \"Interaction Protocols (P)\": \"Not addressed. The paper focuses on modelling interactions with perceptual-motor constraints rather than formal communication, negotiation, or coordination protocols.\",\n  \"Team Formation & Role Specialization (S)\": \"Not addressed. The roles of pedestrian and driver are fixed, and there is no discussion of dynamic team formation, role assignment, or task allocation.\",\n  \"Learning Dynamics (L)\": \"Addressed through a multi-agent RL framework that incorporates population-level distributions for human constraints, enabling adaptation to individual differences and non-stationarity in interactive scenarios.\",\n  \"Mechanism & Incentive Design (M)\": \"Not addressed. The study does not involve designing rules to elicit truthful signals or efficient outcomes under strategic behavior.\",\n  \"Robustness & Safety (R)\": \"Not addressed. While safety is a motivation for autonomous vehicles, the paper does not cover adversarial agents, collusion, or resilience to failures.\",\n  \"Simulation & Testbeds (T)\": \"Addressed by using a real-world dataset from an unsignalised pedestrian crossing to simulate interactions, incorporating visual and motor constraints for environment realism and partial observability.\",\n  \"Collective Evaluation (E)\": \"Addressed through behavioral metrics assessing interaction realism, such as smooth movements and cautious behavior, which evaluate emergent properties and efficiency in the multi-agent system.\"\n}",
+        "reflection": {
+          "verdict": "accept",
+          "feedback": "Analysis is relevant, faithful to the paper, and aligned with the taxonomy definitions.",
+          "raw_response": "{\"verdict\": \"accept\", \"feedback\": \"Analysis is relevant, faithful to the paper, and aligned with the taxonomy definitions.\"}"
+        },
+        "error_feedback": null
+      }
+    ]
+  },
+  {
+    "paper_id": "2510.27410",
+    "area": "Agent Architecture & Tool-Use Orchestration",
+    "categories": [
+      "Agent Architecture & Tool-Use Orchestration"
+    ],
+    "title": "Dialogue as Discovery: Navigating Human Intent Through Principled Inquiry",
+    "analysis": {
+      "Task & Environment Specification (T)": "Covered. Evidence: Goal formalization for resolving user intent uncertainty through dialogue in a structured task space, specifically for scientific diagram generation, as per 'structured task space' and 'scientific diagram generation' in the abstract.",
+      "Agent Evaluation (E)": "Covered. Evidence: Comprehensive evaluation includes ablations, subjective and objective measures, and tests across user expertise levels, as stated in 'comprehensive experiments, including ablations, subjective and objective evaluations'.",
+      "Planning & Control Loops (P)": "Covered. Evidence: Agent employs an inquiry policy based on information theory, using information gain and entropy reduction for active probing and replanning in dialogue, as shown by 'actively probes for information' and 'information gain as an intrinsic reward'.",
+      "Security & Compliance (F)": "Not covered. No evidence of permissioning, data boundaries, audit trails, or compliance mechanisms in the abstract; focus is on intent resolution without security considerations.",
+      "Latency/Cost/Quality Trade-offs (C)": "Not covered. No evidence of model routing, caching, speculative plans, or adaptive trade-offs in the abstract; efficiency and quality are noted but not analyzed as trade-offs.",
+      "Tool Invocation & Program Synthesis (U)": "Not covered. No evidence of tool selection, argument grounding, composition, or program synthesis in the abstract; focus is on dialogue-based intent discovery without explicit tool orchestration.",
+      "Execution Monitoring & Error Recovery (X)": "Not covered. No evidence of runtime observability, exception handling, retries, or recovery mechanisms in the abstract; robustness is mentioned but not specific to execution monitoring."
+    },
+    "reflection": {
+      "verdict": "accept",
+      "feedback": "Analysis is relevant, faithful to the abstract, and aligns with the taxonomy. All coverage assessments are justified with appropriate evidence.",
+      "raw_response": "{\"verdict\": \"accept\", \"feedback\": \"Analysis is relevant, faithful to the abstract, and aligns with the taxonomy. All coverage assessments are justified with appropriate evidence.\"}"
+    },
+    "attempts": [
+      {
+        "attempt_number": 1,
+        "analysis": {
+          "Task & Environment Specification (T)": "Covered. Evidence: Goal formalization for resolving user intent uncertainty through dialogue in a structured task space, specifically for scientific diagram generation, as per 'structured task space' and 'scientific diagram generation' in the abstract.",
+          "Agent Evaluation (E)": "Covered. Evidence: Comprehensive evaluation includes ablations, subjective and objective measures, and tests across user expertise levels, as stated in 'comprehensive experiments, including ablations, subjective and objective evaluations'.",
+          "Planning & Control Loops (P)": "Covered. Evidence: Agent employs an inquiry policy based on information theory, using information gain and entropy reduction for active probing and replanning in dialogue, as shown by 'actively probes for information' and 'information gain as an intrinsic reward'.",
+          "Security & Compliance (F)": "Not covered. No evidence of permissioning, data boundaries, audit trails, or compliance mechanisms in the abstract; focus is on intent resolution without security considerations.",
+          "Latency/Cost/Quality Trade-offs (C)": "Not covered. No evidence of model routing, caching, speculative plans, or adaptive trade-offs in the abstract; efficiency and quality are noted but not analyzed as trade-offs.",
+          "Tool Invocation & Program Synthesis (U)": "Not covered. No evidence of tool selection, argument grounding, composition, or program synthesis in the abstract; focus is on dialogue-based intent discovery without explicit tool orchestration.",
+          "Execution Monitoring & Error Recovery (X)": "Not covered. No evidence of runtime observability, exception handling, retries, or recovery mechanisms in the abstract; robustness is mentioned but not specific to execution monitoring."
+        },
+        "analysis_raw": "{\n  \"Task & Environment Specification (T)\": \"Covered. Evidence: Goal formalization for resolving user intent uncertainty through dialogue in a structured task space, specifically for scientific diagram generation, as per 'structured task space' and 'scientific diagram generation' in the abstract.\",\n  \"Planning & Control Loops (P)\": \"Covered. Evidence: Agent employs an inquiry policy based on information theory, using information gain and entropy reduction for active probing and replanning in dialogue, as shown by 'actively probes for information' and 'information gain as an intrinsic reward'.\",\n  \"Tool Invocation & Program Synthesis (U)\": \"Not covered. No evidence of tool selection, argument grounding, composition, or program synthesis in the abstract; focus is on dialogue-based intent discovery without explicit tool orchestration.\",\n  \"Execution Monitoring & Error Recovery (X)\": \"Not covered. No evidence of runtime observability, exception handling, retries, or recovery mechanisms in the abstract; robustness is mentioned but not specific to execution monitoring.\",\n  \"Latency/Cost/Quality Trade-offs (C)\": \"Not covered. No evidence of model routing, caching, speculative plans, or adaptive trade-offs in the abstract; efficiency and quality are noted but not analyzed as trade-offs.\",\n  \"Security & Compliance (F)\": \"Not covered. No evidence of permissioning, data boundaries, audit trails, or compliance mechanisms in the abstract; focus is on intent resolution without security considerations.\",\n  \"Agent Evaluation (E)\": \"Covered. Evidence: Comprehensive evaluation includes ablations, subjective and objective measures, and tests across user expertise levels, as stated in 'comprehensive experiments, including ablations, subjective and objective evaluations'.\"\n}",
+        "reflection": {
+          "verdict": "accept",
+          "feedback": "Analysis is relevant, faithful to the abstract, and aligns with the taxonomy. All coverage assessments are justified with appropriate evidence.",
+          "raw_response": "{\"verdict\": \"accept\", \"feedback\": \"Analysis is relevant, faithful to the abstract, and aligns with the taxonomy. All coverage assessments are justified with appropriate evidence.\"}"
+        },
+        "error_feedback": null
+      }
+    ]
+  },
+  {
+    "paper_id": "2510.27419",
+    "area": "Foundation Models",
+    "categories": [
+      "Foundation Models"
+    ],
+    "title": "DeepCompress: A Dual Reward Strategy for Dynamically Exploring and Compressing Reasoning Chains",
+    "analysis": {
+      "Objectives & Learning Signals (O)": "Core contribution; introduces a dual reward strategy using reinforcement learning (RL) with an adaptive length reward that dynamically classifies problems as 'Simple' or 'Hard' to adjust CoT length, encouraging shorter paths for simple problems and longer exploratory chains for hard ones.",
+      "Optimization & Training Recipe (R)": "Mentions use of RL and supervised fine-tuning (SFT) but provides no specifics on optimizers, schedulers, parallelism, or other training recipe details.",
+      "Evaluation & Benchmarks (E)": "Explicitly evaluated on challenging mathematical benchmarks, demonstrating superior accuracy and token efficiency compared to baseline methods.",
+      "Architecture & Modeling (M)": "Not addressed; the paper assumes standard Large Reasoning Models (LRMs) and Chain-of-Thought (CoT) without modifying backbone architectures or introducing new modeling components.",
+      "Inference & Systems (S)": "Implied through real-time problem classification and token efficiency improvements, but not explicitly covered; no discussion of serving stacks, batching, or quantization.",
+      "Data & Inputs (I)": "Not explicitly discussed; the abstract focuses on method and evaluation without detailing training data sources or processing.",
+      "Alignment, Safety & Governance (A)": "No mention of safety, alignment, or governance; focused solely on accuracy and efficiency without addressing harms, refusal, or policy enforcement."
+    },
+    "reflection": {
+      "verdict": "accept",
+      "feedback": "Analysis is relevant, faithful to the paper, and well-aligned with the taxonomy, correctly highlighting contributions in O and E while noting omissions in other categories.",
+      "raw_response": "{\"verdict\": \"accept\", \"feedback\": \"Analysis is relevant, faithful to the paper, and well-aligned with the taxonomy, correctly highlighting contributions in O and E while noting omissions in other categories.\"}"
+    },
+    "attempts": [
+      {
+        "attempt_number": 1,
+        "analysis": {
+          "Objectives & Learning Signals (O)": "Core contribution; introduces a dual reward strategy using reinforcement learning (RL) with an adaptive length reward that dynamically classifies problems as 'Simple' or 'Hard' to adjust CoT length, encouraging shorter paths for simple problems and longer exploratory chains for hard ones.",
+          "Optimization & Training Recipe (R)": "Mentions use of RL and supervised fine-tuning (SFT) but provides no specifics on optimizers, schedulers, parallelism, or other training recipe details.",
+          "Evaluation & Benchmarks (E)": "Explicitly evaluated on challenging mathematical benchmarks, demonstrating superior accuracy and token efficiency compared to baseline methods.",
+          "Architecture & Modeling (M)": "Not addressed; the paper assumes standard Large Reasoning Models (LRMs) and Chain-of-Thought (CoT) without modifying backbone architectures or introducing new modeling components.",
+          "Inference & Systems (S)": "Implied through real-time problem classification and token efficiency improvements, but not explicitly covered; no discussion of serving stacks, batching, or quantization.",
+          "Data & Inputs (I)": "Not explicitly discussed; the abstract focuses on method and evaluation without detailing training data sources or processing.",
+          "Alignment, Safety & Governance (A)": "No mention of safety, alignment, or governance; focused solely on accuracy and efficiency without addressing harms, refusal, or policy enforcement."
+        },
+        "analysis_raw": "{\n  \"Data & Inputs (I)\": \"Not explicitly discussed; the abstract focuses on method and evaluation without detailing training data sources or processing.\",\n  \"Architecture & Modeling (M)\": \"Not addressed; the paper assumes standard Large Reasoning Models (LRMs) and Chain-of-Thought (CoT) without modifying backbone architectures or introducing new modeling components.\",\n  \"Objectives & Learning Signals (O)\": \"Core contribution; introduces a dual reward strategy using reinforcement learning (RL) with an adaptive length reward that dynamically classifies problems as 'Simple' or 'Hard' to adjust CoT length, encouraging shorter paths for simple problems and longer exploratory chains for hard ones.\",\n  \"Optimization & Training Recipe (R)\": \"Mentions use of RL and supervised fine-tuning (SFT) but provides no specifics on optimizers, schedulers, parallelism, or other training recipe details.\",\n  \"Inference & Systems (S)\": \"Implied through real-time problem classification and token efficiency improvements, but not explicitly covered; no discussion of serving stacks, batching, or quantization.\",\n  \"Alignment, Safety & Governance (A)\": \"No mention of safety, alignment, or governance; focused solely on accuracy and efficiency without addressing harms, refusal, or policy enforcement.\",\n  \"Evaluation & Benchmarks (E)\": \"Explicitly evaluated on challenging mathematical benchmarks, demonstrating superior accuracy and token efficiency compared to baseline methods.\"\n}",
+        "reflection": {
+          "verdict": "accept",
+          "feedback": "Analysis is relevant, faithful to the paper, and well-aligned with the taxonomy, correctly highlighting contributions in O and E while noting omissions in other categories.",
+          "raw_response": "{\"verdict\": \"accept\", \"feedback\": \"Analysis is relevant, faithful to the paper, and well-aligned with the taxonomy, correctly highlighting contributions in O and E while noting omissions in other categories.\"}"
+        },
+        "error_feedback": null
+      }
+    ]
+  },
+  {
+    "paper_id": "2510.27448",
+    "area": "Foundation Models",
+    "categories": [
+      "Foundation Models"
+    ],
+    "title": "GeoFM: Enhancing Geometric Reasoning of MLLMs via Synthetic Data Generation through Formal Language",
+    "analysis": {
+      "Objectives & Learning Signals (O)": "Not detailed; the training likely employs standard objectives for geometric problem-solving, but no specific losses or signals are mentioned in the abstract.",
+      "Optimization & Training Recipe (R)": "Not discussed; no information on optimizers, schedulers, or training strategies is provided in the abstract.",
+      "Evaluation & Benchmarks (E)": "The paper evaluates performance on benchmarks like MathVista and GeoQA, reporting significant improvements (e.g., 18.7% over GPT-4o on MathVista), highlighting general and domain-specific geometric reasoning assessments.",
+      "Architecture & Modeling (M)": "Not explicitly addressed; the paper enhances existing MLLMs through data synthesis rather than proposing new model architectures or modifications.",
+      "Inference & Systems (S)": "Not covered; the abstract does not mention inference techniques, serving stacks, or systems optimizations.",
+      "Data & Inputs (I)": "The paper focuses on synthetic data generation for geometric reasoning, using formal languages to explore condition combinations in metric space and a symbolic engine to ensure correctness, addressing data scarcity, diversity, and fidelity issues in geometric diagrams.",
+      "Alignment, Safety & Governance (A)": "Not addressed; no reference to safety tuning, red-teaming, or governance aspects in the context of geometric reasoning."
+    },
+    "reflection": {
+      "verdict": "accept",
+      "feedback": "Analysis accurately captures the paper's focus on data synthesis (I) and evaluation (E), with appropriate disclaimers for other categories not covered in the abstract.",
+      "raw_response": "{\"verdict\": \"accept\", \"feedback\": \"Analysis accurately captures the paper's focus on data synthesis (I) and evaluation (E), with appropriate disclaimers for other categories not covered in the abstract.\"}"
+    },
+    "attempts": [
+      {
+        "attempt_number": 1,
+        "analysis": null,
+        "analysis_raw": "{\n  \"Data & Inputs (I)\": \"The paper introduces GeoFM, which uses formal languages and a symbolic engine to generate diverse, high-fidelity synthetic geometric data, addressing scarcity and quality issues in existing geometric data by ensuring correctness and reducing noise.\",\n  \"Evaluation & Benchmarks (E)\": \"The paper evaluates models on MathVista and GeoQA benchmarks, showing that training with synthetic data leads to performance improvements of 18.7% over GPT-4o on MathVista and 16.5% on GeoQA, and exceeds a leading open-source model by 5.7% on MathVista and 2.7% on GeoQA.\"\n}",
+        "reflection": null,
+        "error_feedback": "Missing perspectives: Alignment, Safety & Governance (A), Architecture & Modeling (M), Inference & Systems (S), Objectives & Learning Signals (O), Optimization & Training Recipe (R) Use exactly the provided perspective labels as JSON keys."
+      },
+      {
+        "attempt_number": 2,
+        "analysis": {
+          "Objectives & Learning Signals (O)": "Not detailed; the training likely employs standard objectives for geometric problem-solving, but no specific losses or signals are mentioned in the abstract.",
+          "Optimization & Training Recipe (R)": "Not discussed; no information on optimizers, schedulers, or training strategies is provided in the abstract.",
+          "Evaluation & Benchmarks (E)": "The paper evaluates performance on benchmarks like MathVista and GeoQA, reporting significant improvements (e.g., 18.7% over GPT-4o on MathVista), highlighting general and domain-specific geometric reasoning assessments.",
+          "Architecture & Modeling (M)": "Not explicitly addressed; the paper enhances existing MLLMs through data synthesis rather than proposing new model architectures or modifications.",
+          "Inference & Systems (S)": "Not covered; the abstract does not mention inference techniques, serving stacks, or systems optimizations.",
+          "Data & Inputs (I)": "The paper focuses on synthetic data generation for geometric reasoning, using formal languages to explore condition combinations in metric space and a symbolic engine to ensure correctness, addressing data scarcity, diversity, and fidelity issues in geometric diagrams.",
+          "Alignment, Safety & Governance (A)": "Not addressed; no reference to safety tuning, red-teaming, or governance aspects in the context of geometric reasoning."
+        },
+        "analysis_raw": "{\n  \"Data & Inputs (I)\": \"The paper focuses on synthetic data generation for geometric reasoning, using formal languages to explore condition combinations in metric space and a symbolic engine to ensure correctness, addressing data scarcity, diversity, and fidelity issues in geometric diagrams.\",\n  \"Architecture & Modeling (M)\": \"Not explicitly addressed; the paper enhances existing MLLMs through data synthesis rather than proposing new model architectures or modifications.\",\n  \"Objectives & Learning Signals (O)\": \"Not detailed; the training likely employs standard objectives for geometric problem-solving, but no specific losses or signals are mentioned in the abstract.\",\n  \"Optimization & Training Recipe (R)\": \"Not discussed; no information on optimizers, schedulers, or training strategies is provided in the abstract.\",\n  \"Inference & Systems (S)\": \"Not covered; the abstract does not mention inference techniques, serving stacks, or systems optimizations.\",\n  \"Alignment, Safety & Governance (A)\": \"Not addressed; no reference to safety tuning, red-teaming, or governance aspects in the context of geometric reasoning.\",\n  \"Evaluation & Benchmarks (E)\": \"The paper evaluates performance on benchmarks like MathVista and GeoQA, reporting significant improvements (e.g., 18.7% over GPT-4o on MathVista), highlighting general and domain-specific geometric reasoning assessments.\"\n}",
+        "reflection": {
+          "verdict": "accept",
+          "feedback": "Analysis accurately captures the paper's focus on data synthesis (I) and evaluation (E), with appropriate disclaimers for other categories not covered in the abstract.",
+          "raw_response": "{\"verdict\": \"accept\", \"feedback\": \"Analysis accurately captures the paper's focus on data synthesis (I) and evaluation (E), with appropriate disclaimers for other categories not covered in the abstract.\"}"
+        },
+        "error_feedback": null
+      }
+    ]
+  },
+  {
+    "paper_id": "2510.27628",
+    "area": "Agent Architecture & Tool-Use Orchestration",
+    "categories": [
+      "Agent Architecture & Tool-Use Orchestration"
+    ],
+    "title": "Validity Is What You Need",
+    "analysis": {
+      "Task & Environment Specification (T)": "Not explicitly discussed. The abstract focuses on Agentic AI as applications in enterprise settings but does not detail goal formalization, constraints, or interfaces like tool schemas or APIs.",
+      "Agent Evaluation (E)": "Directly emphasized. The abstract states that Agentic AI success depends on validation by end users and stakeholders, with distinct tools for application validation rather than foundation model evaluation, aligning with task success and reliability metrics.",
+      "Planning & Control Loops (P)": "Not addressed. The abstract does not mention decomposition, hierarchical planning, reflection, or control loops such as ReAct or self-critique.",
+      "Security & Compliance (F)": "Not addressed. The abstract does not cover permissioning, data boundaries, audit trails, or compliance aspects.",
+      "Latency/Cost/Quality Trade-offs (C)": "Implicitly discussed. The abstract notes that with good validation, simpler, faster, and more interpretable models can replace LLMs for core logic, indicating trade-offs in latency, cost, and quality.",
+      "Tool Invocation & Program Synthesis (U)": "Not covered. The abstract does not discuss tool selection, argument grounding, composition, or program generation for orchestrating tools.",
+      "Execution Monitoring & Error Recovery (X)": "Not mentioned. The abstract does not refer to runtime observability, exception handling, retries, or error recovery mechanisms."
+    },
+    "reflection": {
+      "verdict": "accept",
+      "feedback": "Analysis accurately reflects the abstract, with relevant and faithful categorizations, including implicit discussion of trade-offs.",
+      "raw_response": "{\"verdict\": \"accept\", \"feedback\": \"Analysis accurately reflects the abstract, with relevant and faithful categorizations, including implicit discussion of trade-offs.\"}"
+    },
+    "attempts": [
+      {
+        "attempt_number": 1,
+        "analysis": {
+          "Task & Environment Specification (T)": "Not explicitly discussed. The abstract focuses on Agentic AI as applications in enterprise settings but does not detail goal formalization, constraints, or interfaces like tool schemas or APIs.",
+          "Agent Evaluation (E)": "Directly emphasized. The abstract states that Agentic AI success depends on validation by end users and stakeholders, with distinct tools for application validation rather than foundation model evaluation, aligning with task success and reliability metrics.",
+          "Planning & Control Loops (P)": "Not addressed. The abstract does not mention decomposition, hierarchical planning, reflection, or control loops such as ReAct or self-critique.",
+          "Security & Compliance (F)": "Not addressed. The abstract does not cover permissioning, data boundaries, audit trails, or compliance aspects.",
+          "Latency/Cost/Quality Trade-offs (C)": "Implicitly discussed. The abstract notes that with good validation, simpler, faster, and more interpretable models can replace LLMs for core logic, indicating trade-offs in latency, cost, and quality.",
+          "Tool Invocation & Program Synthesis (U)": "Not covered. The abstract does not discuss tool selection, argument grounding, composition, or program generation for orchestrating tools.",
+          "Execution Monitoring & Error Recovery (X)": "Not mentioned. The abstract does not refer to runtime observability, exception handling, retries, or error recovery mechanisms."
+        },
+        "analysis_raw": "{\n  \"Task & Environment Specification (T)\": \"Not explicitly discussed. The abstract focuses on Agentic AI as applications in enterprise settings but does not detail goal formalization, constraints, or interfaces like tool schemas or APIs.\",\n  \"Planning & Control Loops (P)\": \"Not addressed. The abstract does not mention decomposition, hierarchical planning, reflection, or control loops such as ReAct or self-critique.\",\n  \"Tool Invocation & Program Synthesis (U)\": \"Not covered. The abstract does not discuss tool selection, argument grounding, composition, or program generation for orchestrating tools.\",\n  \"Execution Monitoring & Error Recovery (X)\": \"Not mentioned. The abstract does not refer to runtime observability, exception handling, retries, or error recovery mechanisms.\",\n  \"Latency/Cost/Quality Trade-offs (C)\": \"Implicitly discussed. The abstract notes that with good validation, simpler, faster, and more interpretable models can replace LLMs for core logic, indicating trade-offs in latency, cost, and quality.\",\n  \"Security & Compliance (F)\": \"Not addressed. The abstract does not cover permissioning, data boundaries, audit trails, or compliance aspects.\",\n  \"Agent Evaluation (E)\": \"Directly emphasized. The abstract states that Agentic AI success depends on validation by end users and stakeholders, with distinct tools for application validation rather than foundation model evaluation, aligning with task success and reliability metrics.\"\n}",
+        "reflection": {
+          "verdict": "accept",
+          "feedback": "Analysis accurately reflects the abstract, with relevant and faithful categorizations, including implicit discussion of trade-offs.",
+          "raw_response": "{\"verdict\": \"accept\", \"feedback\": \"Analysis accurately reflects the abstract, with relevant and faithful categorizations, including implicit discussion of trade-offs.\"}"
+        },
+        "error_feedback": null
+      }
+    ]
+  },
+  {
+    "paper_id": "2510.27630",
+    "area": "Agent Architecture & Tool-Use Orchestration",
+    "categories": [
+      "Agent Architecture & Tool-Use Orchestration"
+    ],
+    "title": "Interaction as Intelligence Part II: Asynchronous Human-Agent Rollout for Long-Horizon Task Training",
+    "analysis": {
+      "Task & Environment Specification (T)": "The paper specifies long-horizon, domain-specialized tasks evaluated on InnovatorBench, involving goal formalization for tasks that can take days or months.",
+      "Agent Evaluation (E)": "Evaluation on InnovatorBench shows over 50% improvement over baseline and 28% over non-human variant, assessing task success and robustness.",
+      "Planning & Control Loops (P)": "Human intervention when the agent drifts enables replanning and control through asynchronous guidance and action-level filtering, reflecting decomposition and reflection mechanisms.",
+      "Security & Compliance (F)": "Security and compliance aspects are not mentioned in the abstract or metadata.",
+      "Latency/Cost/Quality Trade-offs (C)": "Apollo reduces human annotation cost through lightweight asynchronous guidance, sustaining interactions for over 30 hours and improving data collection efficiency.",
+      "Tool Invocation & Program Synthesis (U)": "The abstract does not explicitly address tool invocation or program synthesis; it focuses on task training rather than tool orchestration.",
+      "Execution Monitoring & Error Recovery (X)": "Human monitoring during drift and supervision control to filter sub-optimal actions prevent error propagation, providing runtime observability and recovery."
+    },
+    "reflection": {
+      "verdict": "accept",
+      "feedback": "Analysis is relevant, faithful to the paper, and well-aligned with the taxonomy. Each perspective is accurately assessed based on the abstract, with clear justifications for inclusions and omissions.",
+      "raw_response": "{\n  \"verdict\": \"accept\",\n  \"feedback\": \"Analysis is relevant, faithful to the paper, and well-aligned with the taxonomy. Each perspective is accurately assessed based on the abstract, with clear justifications for inclusions and omissions.\"\n}"
+    },
+    "attempts": [
+      {
+        "attempt_number": 1,
+        "analysis": {
+          "Task & Environment Specification (T)": "The paper specifies long-horizon, domain-specialized tasks evaluated on InnovatorBench, involving goal formalization for tasks that can take days or months.",
+          "Agent Evaluation (E)": "Evaluation on InnovatorBench shows over 50% improvement over baseline and 28% over non-human variant, assessing task success and robustness.",
+          "Planning & Control Loops (P)": "Human intervention when the agent drifts enables replanning and control through asynchronous guidance and action-level filtering, reflecting decomposition and reflection mechanisms.",
+          "Security & Compliance (F)": "Security and compliance aspects are not mentioned in the abstract or metadata.",
+          "Latency/Cost/Quality Trade-offs (C)": "Apollo reduces human annotation cost through lightweight asynchronous guidance, sustaining interactions for over 30 hours and improving data collection efficiency.",
+          "Tool Invocation & Program Synthesis (U)": "The abstract does not explicitly address tool invocation or program synthesis; it focuses on task training rather than tool orchestration.",
+          "Execution Monitoring & Error Recovery (X)": "Human monitoring during drift and supervision control to filter sub-optimal actions prevent error propagation, providing runtime observability and recovery."
+        },
+        "analysis_raw": "{\n  \"Task & Environment Specification (T)\": \"The paper specifies long-horizon, domain-specialized tasks evaluated on InnovatorBench, involving goal formalization for tasks that can take days or months.\",\n  \"Planning & Control Loops (P)\": \"Human intervention when the agent drifts enables replanning and control through asynchronous guidance and action-level filtering, reflecting decomposition and reflection mechanisms.\",\n  \"Tool Invocation & Program Synthesis (U)\": \"The abstract does not explicitly address tool invocation or program synthesis; it focuses on task training rather than tool orchestration.\",\n  \"Execution Monitoring & Error Recovery (X)\": \"Human monitoring during drift and supervision control to filter sub-optimal actions prevent error propagation, providing runtime observability and recovery.\",\n  \"Latency/Cost/Quality Trade-offs (C)\": \"Apollo reduces human annotation cost through lightweight asynchronous guidance, sustaining interactions for over 30 hours and improving data collection efficiency.\",\n  \"Security & Compliance (F)\": \"Security and compliance aspects are not mentioned in the abstract or metadata.\",\n  \"Agent Evaluation (E)\": \"Evaluation on InnovatorBench shows over 50% improvement over baseline and 28% over non-human variant, assessing task success and robustness.\"\n}",
+        "reflection": {
+          "verdict": "accept",
+          "feedback": "Analysis is relevant, faithful to the paper, and well-aligned with the taxonomy. Each perspective is accurately assessed based on the abstract, with clear justifications for inclusions and omissions.",
+          "raw_response": "{\n  \"verdict\": \"accept\",\n  \"feedback\": \"Analysis is relevant, faithful to the paper, and well-aligned with the taxonomy. Each perspective is accurately assessed based on the abstract, with clear justifications for inclusions and omissions.\"\n}"
+        },
+        "error_feedback": null
+      }
+    ]
+  }
+]

@@ -1,0 +1,64 @@
+2025-11-04 18:35:54,415 - INFO - Starting arXiv web crawler with configuration:
+2025-11-04 18:35:54,415 - INFO -   Categories: cs.AI, cs.LG, cs.CL, stat.ML, cs.MA, q-fin.TR, q-fin.CP, q-fin.PM, q-fin.PR, q-fin.RM
+2025-11-04 18:35:54,415 - INFO -   Max workers: 10
+2025-11-04 18:35:54,415 - INFO -   Include details: True
+2025-11-04 18:35:54,415 - INFO -   Output file: 2025-11-04/arxiv_web.json
+2025-11-04 18:35:54,415 - INFO - Starting arXiv web crawl for categories: cs.AI, cs.LG, cs.CL, stat.ML, cs.MA, q-fin.TR, q-fin.CP, q-fin.PM, q-fin.PR, q-fin.RM
+2025-11-04 18:35:54,415 - INFO - Crawling category cs.AI from https://arxiv.org/list/cs.AI/recent
+2025-11-04 18:35:55,131 - INFO - Found 50 papers in category cs.AI
+2025-11-04 18:35:56,136 - INFO - Crawling category cs.LG from https://arxiv.org/list/cs.LG/recent
+2025-11-04 18:35:56,569 - INFO - Found 50 papers in category cs.LG
+2025-11-04 18:35:57,575 - INFO - Crawling category cs.CL from https://arxiv.org/list/cs.CL/recent
+2025-11-04 18:35:58,257 - INFO - Found 50 papers in category cs.CL
+2025-11-04 18:35:59,259 - INFO - Crawling category stat.ML from https://arxiv.org/list/stat.ML/recent
+2025-11-04 18:35:59,638 - INFO - Found 42 papers in category stat.ML
+2025-11-04 18:36:00,643 - INFO - Crawling category cs.MA from https://arxiv.org/list/cs.MA/recent
+2025-11-04 18:36:01,025 - INFO - Found 17 papers in category cs.MA
+2025-11-04 18:36:02,031 - INFO - Crawling category q-fin.TR from https://arxiv.org/list/q-fin.TR/recent
+2025-11-04 18:36:02,226 - INFO - Found 2 papers in category q-fin.TR
+2025-11-04 18:36:03,230 - INFO - Crawling category q-fin.CP from https://arxiv.org/list/q-fin.CP/recent
+2025-11-04 18:36:03,774 - INFO - Found 6 papers in category q-fin.CP
+2025-11-04 18:36:04,779 - INFO - Crawling category q-fin.PM from https://arxiv.org/list/q-fin.PM/recent
+2025-11-04 18:36:04,975 - INFO - Found 0 papers in category q-fin.PM
+2025-11-04 18:36:05,980 - INFO - Crawling category q-fin.PR from https://arxiv.org/list/q-fin.PR/recent
+2025-11-04 18:36:06,256 - INFO - Found 2 papers in category q-fin.PR
+2025-11-04 18:36:07,262 - INFO - Crawling category q-fin.RM from https://arxiv.org/list/q-fin.RM/recent
+2025-11-04 18:36:07,502 - INFO - Found 4 papers in category q-fin.RM
+2025-11-04 18:36:08,507 - INFO - Total papers crawled from list pages: 223
+2025-11-04 18:36:08,507 - INFO - Starting parallel crawl of paper details...
+2025-11-04 18:36:08,507 - INFO - Starting parallel crawl of 223 paper details
+2025-11-04 18:36:17,547 - INFO - Successfully crawled details for 223 papers
+2025-11-04 18:36:17,547 - INFO - Completed detail crawl for 223 papers
+2025-11-04 18:36:17,825 - INFO - Added 212 new papers to database
+2025-11-05 10:37:53,897 - INFO - Starting arXiv web crawler with configuration:
+2025-11-05 10:37:53,898 - INFO -   Categories: cs.AI, cs.LG, cs.CL, stat.ML, cs.MA, q-fin.TR, q-fin.CP, q-fin.PM, q-fin.PR, q-fin.RM
+2025-11-05 10:37:53,898 - INFO -   Max workers: 10
+2025-11-05 10:37:53,898 - INFO -   Include details: True
+2025-11-05 10:37:53,898 - INFO -   Output file: 2025-11-05/arxiv_web.json
+2025-11-05 10:37:53,898 - INFO - Starting arXiv web crawl for categories: cs.AI, cs.LG, cs.CL, stat.ML, cs.MA, q-fin.TR, q-fin.CP, q-fin.PM, q-fin.PR, q-fin.RM
+2025-11-05 10:37:53,898 - INFO - Crawling category cs.AI from https://arxiv.org/list/cs.AI/recent
+2025-11-05 10:37:54,392 - INFO - Found 50 papers in category cs.AI
+2025-11-05 10:37:55,398 - INFO - Crawling category cs.LG from https://arxiv.org/list/cs.LG/recent
+2025-11-05 10:37:55,607 - INFO - Found 50 papers in category cs.LG
+2025-11-05 10:37:56,612 - INFO - Crawling category cs.CL from https://arxiv.org/list/cs.CL/recent
+2025-11-05 10:37:56,763 - INFO - Found 50 papers in category cs.CL
+2025-11-05 10:37:57,768 - INFO - Crawling category stat.ML from https://arxiv.org/list/stat.ML/recent
+2025-11-05 10:37:57,946 - INFO - Found 42 papers in category stat.ML
+2025-11-05 10:37:58,951 - INFO - Crawling category cs.MA from https://arxiv.org/list/cs.MA/recent
+2025-11-05 10:37:59,153 - INFO - Found 17 papers in category cs.MA
+2025-11-05 10:38:00,158 - INFO - Crawling category q-fin.TR from https://arxiv.org/list/q-fin.TR/recent
+2025-11-05 10:38:00,267 - INFO - Found 2 papers in category q-fin.TR
+2025-11-05 10:38:01,273 - INFO - Crawling category q-fin.CP from https://arxiv.org/list/q-fin.CP/recent
+2025-11-05 10:38:01,539 - INFO - Found 6 papers in category q-fin.CP
+2025-11-05 10:38:02,544 - INFO - Crawling category q-fin.PM from https://arxiv.org/list/q-fin.PM/recent
+2025-11-05 10:38:02,655 - INFO - Found 0 papers in category q-fin.PM
+2025-11-05 10:38:03,658 - INFO - Crawling category q-fin.PR from https://arxiv.org/list/q-fin.PR/recent
+2025-11-05 10:38:03,855 - INFO - Found 2 papers in category q-fin.PR
+2025-11-05 10:38:04,858 - INFO - Crawling category q-fin.RM from https://arxiv.org/list/q-fin.RM/recent
+2025-11-05 10:38:04,975 - INFO - Found 4 papers in category q-fin.RM
+2025-11-05 10:38:05,976 - INFO - Total papers crawled from list pages: 223
+2025-11-05 10:38:05,977 - INFO - Starting parallel crawl of paper details...
+2025-11-05 10:38:05,977 - INFO - Starting parallel crawl of 223 paper details
+2025-11-05 10:38:10,971 - INFO - Successfully crawled details for 223 papers
+2025-11-05 10:38:10,971 - INFO - Completed detail crawl for 223 papers
+2025-11-05 10:38:11,271 - INFO - Added 212 new papers to database

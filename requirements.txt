@@ -7,6 +7,13 @@ beautifulsoup4>=4.9.3
 # For arXiv module
 urllib3>=1.26.0
 
+# For arXiv web crawler
+beautifulsoup4>=4.12.0
+
+# For LLM functionality
+openai>=1.0.0
+numpy>=1.21.0
+
 # For date handling (already in standard library)
 # datetime
 # typing
@@ -15,3 +22,13 @@ urllib3>=1.26.0
 
 # Optional: for enhanced HTTP handling
 # requests[security]  # For SSL/TLS support
+
+# For clustering functionality
+umap-learn>=0.5.0
+hdbscan>=0.8.0
+scikit-learn>=1.0.0
+matplotlib>=3.5.0  # Optional for visualization
+volcengine-python-sdk
+
+# For progress tracking
+tqdm>=4.60.0
