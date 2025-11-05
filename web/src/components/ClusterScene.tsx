@@ -1,5 +1,5 @@
 import { Canvas } from '@react-three/fiber';
-import { Billboard, Html, OrbitControls, PerspectiveCamera, Stars } from '@react-three/drei';
+import { Billboard, OrbitControls, PerspectiveCamera, Stars } from '@react-three/drei';
 import { Bloom, EffectComposer } from '@react-three/postprocessing';
 import { Suspense, useMemo } from 'react';
 import * as THREE from 'three';
@@ -66,7 +66,7 @@ type ClusterSceneProps = {
   papers: PaperPoint[];
   hoveringPaperId: string | null;
   hoveringClusterId: number | null;
-  pinnedPaperIds: Set<string>;
+  selectedClusterIds: Set<number>;
   onHoverChange: (payload: HoverPayload) => void;
   onTogglePin: (paper: PaperPoint) => void;
   onBackgroundClick: () => void;
@@ -97,14 +97,14 @@ const computeSceneMetrics = (papers: PaperPoint[]) => {
 const PaperPointMesh = ({
   paper,
   hovered,
-  pinned,
+  selected,
   clusterHighlighted,
   onHoverChange,
   onTogglePin
 }: {
   paper: PaperPoint;
   hovered: boolean;
-  pinned: boolean;
+  selected: boolean;
   clusterHighlighted: boolean;
   onHoverChange: (payload: HoverPayload) => void;
   onTogglePin: (paper: PaperPoint) => void;
@@ -137,7 +137,7 @@ const PaperPointMesh = ({
     haloScale = 0.34;
   }
 
-  if (pinned) {
+  if (selected) {
     groupScale = 1.28;
     coreScale = 0.3;
     emissiveIntensity = 0.85;
@@ -191,26 +191,6 @@ const PaperPointMesh = ({
           raycast={noopRaycast}
         />
       </Billboard>
-      {/* {(pinned || hovered) && (
-        <Html
-          distanceFactor={18}
-          occlude
-          style={{
-            padding: '10px 12px',
-            borderRadius: '12px',
-            border: '1px solid rgba(120, 148, 255, 0.4)',
-            background: 'rgba(12, 18, 38, 0.85)',
-            color: '#f7f9ff',
-            fontSize: '0.75rem',
-            letterSpacing: '0.02em',
-            boxShadow: '0 12px 28px rgba(12, 18, 44, 0.45)',
-            pointerEvents: 'none'
-          }}
-          position={[0, 3.4, 0]}
-        >
-          {paper.title}
-        </Html>
-      )} */}
     </group>
   );
 };
@@ -219,7 +199,7 @@ const ClusterScene = ({
   papers,
   hoveringPaperId,
   hoveringClusterId,
-  pinnedPaperIds,
+  selectedClusterIds,
   onHoverChange,
   onTogglePin,
   onBackgroundClick
@@ -269,19 +249,22 @@ const ClusterScene = ({
           saturation={0}
           fade
         />
-        {papers.map((paper) => (
-          <PaperPointMesh
-            key={paper.paperId}
-            paper={paper}
-            hovered={hoveringPaperId === paper.paperId}
-            pinned={pinnedPaperIds.has(paper.paperId)}
-            clusterHighlighted={
-              hoveringClusterId !== null && paper.clusterId === hoveringClusterId
-            }
-            onHoverChange={onHoverChange}
-            onTogglePin={onTogglePin}
-          />
-        ))}
+        {papers.map((paper) => {
+          const isSelected = selectedClusterIds.has(paper.clusterId);
+          const clusterHighlighted =
+            isSelected || (hoveringClusterId !== null && paper.clusterId === hoveringClusterId);
+          return (
+            <PaperPointMesh
+              key={paper.paperId}
+              paper={paper}
+              hovered={hoveringPaperId === paper.paperId}
+              selected={isSelected}
+              clusterHighlighted={clusterHighlighted}
+              onHoverChange={onHoverChange}
+              onTogglePin={onTogglePin}
+            />
+          );
+        })}
 
         <EffectComposer multisampling={4}>
           <Bloom

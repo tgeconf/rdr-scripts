@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { EnrichedClusteringData, RawClusterResponse } from '../types';
+import { EnrichedClusteringData, RawClusteringPayload } from '../types';
 import { transformClusteringPayload } from '../utils/dataTransform';
 
 type APIState = {
@@ -12,8 +12,12 @@ type APIState = {
   refresh: () => void;
 };
 
+const DATA_ROOT = `${import.meta.env.BASE_URL}data/`;
+
+const buildDataUrl = (relativePath: string) => `${DATA_ROOT}${relativePath}`;
+
 const fetchJSON = async <T>(url: string, signal: AbortSignal): Promise<T> => {
-  const response = await fetch(url, { signal });
+  const response = await fetch(url, { signal, cache: 'no-cache' });
   if (!response.ok) {
     throw new Error(`Request failed: ${response.status} ${response.statusText}`);
   }
@@ -31,10 +35,11 @@ export const useClusteringData = (): APIState => {
 
   const loadDates = useCallback(async (signal: AbortSignal) => {
     try {
-      const result = await fetchJSON<{ dates: string[] }>('/api/dates', signal);
-      setAvailableDates(result.dates);
-      if (!selectedDate && result.dates.length > 0) {
-        setSelectedDate(result.dates[0]);
+      const result = await fetchJSON<{ dates: string[] }>(buildDataUrl('index.json'), signal);
+      const sorted = result.dates.slice().sort((a, b) => b.localeCompare(a));
+      setAvailableDates(sorted);
+      if (!selectedDate && sorted.length > 0) {
+        setSelectedDate(sorted[0]);
       }
     } catch (err) {
       if ((err as Error).name !== 'AbortError') {
@@ -50,8 +55,11 @@ export const useClusteringData = (): APIState => {
       setData(null);
 
       try {
-        const result = await fetchJSON<RawClusterResponse>(`/api/clusters?date=${date}`, signal);
-        setData(transformClusteringPayload(result.date, result.payload));
+        const payload = await fetchJSON<RawClusteringPayload>(
+          buildDataUrl(`${date}/arxiv_clustering_results.json`),
+          signal
+        );
+        setData(transformClusteringPayload(date, payload));
       } catch (err) {
         if ((err as Error).name !== 'AbortError') {
           setError((err as Error).message);

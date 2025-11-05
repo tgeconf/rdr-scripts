@@ -139,6 +139,23 @@ rdr-scripts/
 4. **Embedding Projection**: Project processed content into embedding space
 5. **Cluster Analysis**: Perform clustering and thematic analysis on embeddings
 
+### Daily Visualization Workflow
+
+To refresh the 3D visualization and publish it to GitHub Pages after updating the dataset:
+
+1. Run the daily clustering pipeline (or copy the new snapshot) so `dataset/YYYY-MM-DD/arxiv_clustering_results.json` reflects the latest data.
+2. From the `web/` directory install dependencies (once) and export the datasets into the static bundle assets:
+   ```bash
+   cd web
+   npm install        # only needed the first time or after dependency changes
+   npm run export:data
+   ```
+3. Preview locally if desired:
+   ```bash
+   npm run dev
+   ```
+4. Commit the updated `dataset/**` files together with the generated `web/public/data/**` outputs, then push to the default branch. The `deploy.yml` GitHub Actions workflow automatically builds the site (respecting the repo’s Pages base path) and deploys the contents of `web/dist` to GitHub Pages.
+
 ## Citation
 
 If you use this framework in your research, please cite the original RDR paper.

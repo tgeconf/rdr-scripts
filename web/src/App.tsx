@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import ClusterScene from './components/ClusterScene';
 import { useClusteringData } from './hooks/useClusteringData';
-import { PaperPoint } from './types';
+import { ClusterSummary, PaperPoint } from './types';
 import { getClusterColorHex } from './utils/color';
 
 type HoverState = {
@@ -12,29 +12,20 @@ type HoverState = {
 const App = () => {
   const { availableDates, selectedDate, data, loading, error, selectDate, refresh } = useClusteringData();
   const [hoverState, setHoverState] = useState<HoverState>({ paper: null, position: null });
-  const [pinnedPapers, setPinnedPapers] = useState<Map<string, PaperPoint>>(new Map());
-
-  const pinnedList = useMemo(() => Array.from(pinnedPapers.values()).reverse(), [pinnedPapers]);
-  const pinnedIds = useMemo(() => new Set(pinnedPapers.keys()), [pinnedPapers]);
-
-  const topCategories = useMemo(() => {
-    if (!data) {
-      return [];
-    }
-    return Object.entries(data.categories)
-      .slice(0, 6)
-      .map(([name, count]) => ({ name, count }));
-  }, [data]);
+  const [selectedClusters, setSelectedClusters] = useState<Set<number>>(new Set());
 
   const clusterLegend = useMemo(() => {
     if (!data) {
       return [];
     }
-    return data.clusterSummaries.map((cluster) => ({
-      clusterId: cluster.clusterId,
-      color: getClusterColorHex(cluster.clusterId),
-      label: cluster.keywords
-    }));
+    return data.clusterSummaries
+      .slice()
+      .sort((a, b) => a.clusterId - b.clusterId)
+      .map((cluster) => ({
+        clusterId: cluster.clusterId,
+        color: getClusterColorHex(cluster.clusterId),
+        label: cluster.keywords
+      }));
   }, [data]);
 
   const handleHoverChange = (payload: { paper: PaperPoint | null; screenPosition?: { x: number; y: number } }) => {
@@ -48,13 +39,13 @@ const App = () => {
     });
   };
 
-  const togglePin = (paper: PaperPoint) => {
-    setPinnedPapers((prev) => {
-      const next = new Map(prev);
-      if (next.has(paper.paperId)) {
-        next.delete(paper.paperId);
+  const toggleClusterSelection = (paper: PaperPoint) => {
+    setSelectedClusters((prev) => {
+      const next = new Set(prev);
+      if (next.has(paper.clusterId)) {
+        next.delete(paper.clusterId);
       } else {
-        next.set(paper.paperId, paper);
+        next.add(paper.clusterId);
       }
       return next;
     });
@@ -62,28 +53,53 @@ const App = () => {
 
   useEffect(() => {
     if (!data) {
-      setPinnedPapers(new Map());
+      setSelectedClusters(new Set());
       setHoverState({ paper: null, position: null });
       return;
     }
-    const lookup = new Map(data.papers.map((paper) => [paper.paperId, paper]));
-    setPinnedPapers((prev) => {
-      const next = new Map<string, PaperPoint>();
-      prev.forEach((_value, key) => {
-        const updated = lookup.get(key);
-        if (updated) {
-          next.set(key, updated);
-        }
-      });
-      return next;
-    });
+    setSelectedClusters(new Set());
     setHoverState({ paper: null, position: null });
   }, [data]);
 
-  const clearPinned = useCallback(() => {
-    setPinnedPapers(new Map());
+  const clearSelections = useCallback(() => {
+    setSelectedClusters(new Set());
     setHoverState({ paper: null, position: null });
   }, []);
+
+  const selectedClusterDetails = useMemo(() => {
+    if (!data || selectedClusters.size === 0) {
+      return [] as Array<{ cluster: ClusterSummary; papers: PaperPoint[] }>;
+    }
+
+    const clusterLookup = new Map<number, ClusterSummary>(
+      data.clusterSummaries.map((cluster) => [cluster.clusterId, cluster])
+    );
+
+    const papersByCluster = new Map<number, PaperPoint[]>();
+    data.papers.forEach((paper) => {
+      if (selectedClusters.has(paper.clusterId)) {
+        const bucket = papersByCluster.get(paper.clusterId) ?? [];
+        bucket.push(paper);
+        papersByCluster.set(paper.clusterId, bucket);
+      }
+    });
+
+    return Array.from(selectedClusters)
+      .map((clusterId) => {
+        const cluster = clusterLookup.get(clusterId);
+        if (!cluster) {
+          return null;
+        }
+        const papers = (papersByCluster.get(clusterId) ?? []).slice().sort((a, b) =>
+          a.title.localeCompare(b.title)
+        );
+        return { cluster, papers };
+      })
+      .filter((entry): entry is { cluster: ClusterSummary; papers: PaperPoint[] } =>
+        entry !== null
+      )
+      .sort((a, b) => a.cluster.clusterId - b.cluster.clusterId);
+  }, [data, selectedClusters]);
 
   return (
     <div className="app-container">
@@ -93,10 +109,10 @@ const App = () => {
             papers={data.papers}
             hoveringPaperId={hoverState.paper?.paperId ?? null}
             hoveringClusterId={hoverState.paper?.clusterId ?? null}
-            pinnedPaperIds={pinnedIds}
+            selectedClusterIds={selectedClusters}
             onHoverChange={handleHoverChange}
-            onTogglePin={togglePin}
-            onBackgroundClick={clearPinned}
+            onTogglePin={toggleClusterSelection}
+            onBackgroundClick={clearSelections}
           />
         )}
         {loading && (
@@ -126,10 +142,7 @@ const App = () => {
       </div>
 
       <div className="overlay">
-        <div
-          className="floating-panel"
-          style={{ position: 'absolute', top: 24, left: 24, width: 360 }}
-        >
+        <div className="floating-panel panel-snapshot">
           <div className="panel-row date-picker">
             <h2>Dataset Snapshot</h2>
           </div>
@@ -173,7 +186,7 @@ const App = () => {
                   </div>
                 )}
               </div>
-              <div className="panel-row" style={{ marginTop: 14 }}>
+              <div className="panel-row panel-row-compact">
                 {data.stats.clustering_algorithm && (
                   <span className="panel-tag">
                     <strong>Clustering</strong> {data.stats.clustering_algorithm}
@@ -198,42 +211,31 @@ const App = () => {
 
         {data && (
           <>
-            <div
-              className="floating-panel"
-              style={{ position: 'absolute', top: 24, right: 24, width: 320 }}
-            >
+            <div className="floating-panel panel-legend">
               <h3>Cluster Legend</h3>
               <div className="legend">
-                {clusterLegend.map((cluster) => (
-                  <div className="legend-item" key={cluster.clusterId}>
-                    <span
-                      className="legend-swatch"
-                      style={{ backgroundColor: cluster.color, boxShadow: `0 0 12px ${cluster.color}` }}
-                    />
-                    <span>
-                      C{cluster.clusterId}: {cluster.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
-              {topCategories.length > 0 && (
-                <>
-                  <h3 style={{ marginTop: 16 }}>Top Categories</h3>
-                  <div className="legend">
-                    {topCategories.map((category) => (
-                      <span className="panel-tag" key={category.name}>
-                        <strong>{category.count}</strong> {category.name}
+                {clusterLegend.map((cluster) => {
+                  const isHovered = hoverState.paper?.clusterId === cluster.clusterId;
+                  const isSelected = selectedClusters.has(cluster.clusterId);
+                  return (
+                    <div
+                      className={`legend-item ${isHovered || isSelected ? 'active' : ''}`}
+                      key={cluster.clusterId}
+                    >
+                      <span
+                        className="legend-swatch"
+                        style={{ backgroundColor: cluster.color, boxShadow: `0 0 10px ${cluster.color}` }}
+                      />
+                      <span className="legend-label">
+                        C{cluster.clusterId}: {cluster.label}
                       </span>
-                    ))}
-                  </div>
-                </>
-              )}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
 
-            <div
-              className="floating-panel"
-              style={{ position: 'absolute', bottom: 24, left: 24, width: 340, maxHeight: '48vh', overflowY: 'auto' }}
-            >
+            <div className="floating-panel panel-insights">
               <h3>Cluster Insights</h3>
               <div className="cluster-list">
                 {data.clusterSummaries.map((cluster) => (
@@ -260,48 +262,30 @@ const App = () => {
               </div>
             </div>
 
-            <div
-              className="floating-panel"
-              style={{ position: 'absolute', bottom: 24, right: 24, width: 360, maxHeight: '48vh', overflowY: 'auto' }}
-            >
-              <h3>Pinned Papers</h3>
-              <div className="pinned-panel">
-                {pinnedList.length === 0 && (
-                  <div className="cluster-item">
-                    <span style={{ color: 'rgba(210, 220, 255, 0.6)' }}>
-                      Click any bubble to pin the paper in this panel.
-                    </span>
+            <div className="floating-panel panel-categories">
+              <h3>Selected Clusters</h3>
+              <div className="category-panel">
+                {selectedClusterDetails.length === 0 ? (
+                  <div className="category-empty">
+                    Click a paper bubble to pin its cluster. Select multiple clusters to compare; click the background to reset.
                   </div>
-                )}
-                {pinnedList.map((paper) => (
-                  <div className="pinned-item" key={paper.paperId}>
-                    <h4>{paper.title}</h4>
-                    <div className="meta">
-                      {paper.authors && <span>{paper.authors}</span>}
-                      {paper.publishedTime && (
-                        <span> · {new Date(paper.publishedTime).toLocaleDateString()}</span>
-                      )}
+                ) : (
+                  selectedClusterDetails.map((entry) => (
+                    <div className="category-section" key={entry.cluster.clusterId}>
+                      <div className="category-header">
+                        <div className="category-label">
+                          Cluster {entry.cluster.clusterId} · {entry.papers.length} papers
+                        </div>
+                        <div className="category-keywords">{entry.cluster.keywords}</div>
+                      </div>
+                      <ul className="category-list">
+                        {entry.papers.map((paper) => (
+                          <li key={paper.paperId}>{paper.title}</li>
+                        ))}
+                      </ul>
                     </div>
-                    {paper.categories.length > 0 && (
-                      <p>
-                        <strong>Categories:</strong> {paper.categories.join(', ')}
-                      </p>
-                    )}
-                    {paper.abstract && (
-                      <p>
-                        <strong>Abstract:</strong> {paper.abstract.slice(0, 220)}
-                        {paper.abstract.length > 220 ? '...' : ''}
-                      </p>
-                    )}
-                    {paper.url && (
-                      <p>
-                        <a href={paper.url} target="_blank" rel="noreferrer" style={{ color: '#93c5fd' }}>
-                          View on arXiv
-                        </a>
-                      </p>
-                    )}
-                  </div>
-                ))}
+                  ))
+                )}
               </div>
             </div>
           </>

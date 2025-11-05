@@ -1,8 +1,3 @@
-export interface RawClusterResponse {
-  date: string;
-  payload: RawClusteringPayload;
-}
-
 export interface RawClusteringPayload {
   cluster_keywords: Record<string, string>;
   cluster_mapping: Record<
